@@ -2,189 +2,37 @@
 .main-screen-item {
   position: absolute;
   top: 167px;
-  left: 373px;
+  left: 370px;
   background-color: var(--color-whitesmoke);
-  width: 10px;
+  width: 16px;
   height: 2400px;
+  border-radius: var(--br-11xl);
 }
 .main-screen-item {
   top: 172px;
-  left: 375px;
+  left: 374px;
   border-radius: var(--br-8xs);
   background-color: var(--color-darkgray);
-  width: 6px;
+  width: 8px;
   height: 1000px;
 }
-.product-1 {
-  position: absolute;
-  bottom: 0;
-  left: 5px;
-  font-weight: 500;
-}
-.product-1-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 281px;
-  height: 200px;
-  background-image: url(../public/group-6@3x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.product-2-wrapper,
-.x360-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.product-2-wrapper {
-  width: 281px;
-  height: 200px;
-  background-image: url(../public/group-6@3x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.product-3-wrapper,
-.x360-icon {
-  position: absolute;
-  top: 242px;
-  left: 0;
-}
-.product-3-wrapper {
-  width: 281px;
-  height: 200px;
-  background-image: url(../public/group-6@3x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.x360-icon {
+
+img {
   width: 100%;
-  left: 0;
-  max-width: 100%;
-  overflow: hidden;
-  height: 158px;
-  object-fit: cover;
 }
-.product-31 {
-  margin: 0;
+
+#menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1em;
 }
-.product-4-wrapper,
-.x360-parent {
-  position: absolute;
-  top: 242px;
-  width: 281px;
-}
-.x360-parent {
-  left: 0;
-  height: 242px;
-}
-.product-4-wrapper {
-  right: 0;
-  height: 200px;
-  background-image: url(../public/group-6@3x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.product-5-wrapper {
-  top: calc(50% - 463.5px);
-  left: 0;
-}
-.product-5-wrapper,
-.product-6-wrapper,
-.product-7-wrapper,
-.product-8-wrapper {
-  position: absolute;
-  width: 281px;
-  height: 200px;
-  background-image: url(../public/group-6@3x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.product-6-wrapper {
-  top: calc(50% - 463.5px);
-  right: 0;
-}
-.product-7-wrapper,
-.product-8-wrapper {
-  top: calc(50% - 221.5px);
-}
-.product-7-wrapper {
-  left: 0;
-}
-.product-8-wrapper {
-  right: 0;
-}
-.product-9-wrapper {
-  top: calc(50% + 20.5px);
-  left: 0;
-}
-.product-10-wrapper,
-.product-11-wrapper,
-.product-12-wrapper,
-.product-9-wrapper {
-  position: absolute;
-  width: 281px;
-  height: 200px;
-  background-image: url(../public/group-6@3x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.product-10-wrapper {
-  top: calc(50% + 20.5px);
-  right: 0;
-}
-.product-11-wrapper,
-.product-12-wrapper {
-  top: calc(50% + 262.5px);
-}
-.product-11-wrapper {
-  left: 0;
-}
-.product-12-wrapper {
-  right: 0;
-}
-.product-13-wrapper {
-  bottom: 243px;
-  left: 0;
-}
-.product-13-wrapper,
-.product-14-wrapper,
-.product-15-wrapper,
-.product-16-wrapper {
-  position: absolute;
-  width: 281px;
-  height: 200px;
-  background-image: url(../public/group-6@3x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.product-14-wrapper {
-  right: 0;
-  bottom: 243px;
-}
-.product-15-wrapper,
-.product-16-wrapper {
-  bottom: 1px;
-}
-.product-15-wrapper {
-  left: 0;
-}
-.product-16-wrapper {
-  right: 0;
-}
+
 .repeat-grid-2 {
   position: absolute;
   top: 167px;
   right: 50px;
   width: 597px;
-  height: 1895px;
+  /* height: 1895px; */
 }
 .zelf-samenstellen {
   position: absolute;
@@ -206,11 +54,11 @@
   right: 9px;
   left: -2px;
   height: 222px;
-  background-image: url(../public/group-5@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
+
 .signature-series-wrapper {
   top: 242px;
 }
@@ -244,7 +92,6 @@
   right: 9px;
   left: -2px;
   height: 222px;
-  background-image: url(../public/group-5@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;

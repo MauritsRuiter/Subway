@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/main-screen.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dubai:weight@400;500;700&display=swap"
+    />
+    <title>Signature Series</title>
+  </head>
+
+  <body>
+    <div class="main-screen">
+      <!-- Scrollbar start -->
+      <div class="main-screen-child"></div>
+      <div class="main-screen-item"></div>
+      <!-- Scrollbar end -->
+      <div class="repeat-grid-2">
+        <!-- For loop for products -->
+        <!-- <?php
+            for ($i = 1; $i <= 16; $i++) {
+              echo "<div class='product-$i-wrapper'>
+        <div class='product-$i'>Product&nbsp;$i</div>
+        </div>";
+            }
+            ?> -->
+
+        <div id="menu"></div>
+      </div>
+
+      <div class="repeat-grid-1">
+        <div class="zelf-samenstellen-wrapper" onclick="goToPageCustomize()">
+          <div class="zelf-samenstellen">Zelf Samenstellen</div>
+          <br />
+          <img
+            style="width: 170px; margin-left: 50px"
+            src="./img/lego.png"
+            alt=""
+          />
+        </div>
+        <div class="signature-series-wrapper">
+          <div class="zelf-samenstellen">Signature Series</div>
+          <br />
+          <img src="./img/sigseries.jpg" alt="" />
+        </div>
+        <div class="submelts-wrapper" onclick="goToPageSubmelts()">
+          <div class="zelf-samenstellen">SubMelts®</div>
+          <br />
+          <img src="./img/submelt.jpg" alt="" />
+        </div>
+        <div class="subs-wrapper" onclick="goToPageSubs()">
+          <div class="zelf-samenstellen">Subs</div>
+          <br />
+          <img src="./img/allesubs.jpg" alt="" />
+        </div>
+        <div class="wraps-wrapper" onclick="goToPageWraps()">
+          <div class="zelf-samenstellen">Wraps</div>
+          <br />
+          <img src="./img/wraps.jpg" alt="" />
+        </div>
+        <div class="salades-wrapper" onclick="goToPageSalades()">
+          <div class="zelf-samenstellen">Salades</div>
+          <br />
+          <img src="./img/salades.jpg" alt="" />
+        </div>
+        <div class="daily-deals-wrapper" onclick="goToPageDailyDeals()">
+          <div class="zelf-samenstellen">Daily Deals</div>
+          <br />
+          <img src="./img/dailydeals.jpg" alt="" />
+        </div>
+        <div class="breakfast-wrapper" onclick="goToPageBreakfast()">
+          <div class="zelf-samenstellen">Breakfast</div>
+          <br />
+          <img src="./img/ontbijt.jpg" alt="" />
+        </div>
+        <div class="kids-pak-wrapper" onclick="goToPageKidsPak()">
+          <div class="zelf-samenstellen">Kids Pak™</div>
+          <br />
+          <img src="./img/kids_pak.jpg" alt="" />
+        </div>
+        <div class="dranken-extras-wrapper" onclick="goToPageDrankenExtras()">
+          <div class="zelf-samenstellen">Dranken & Extra's</div>
+          <br />
+          <img src="./img/fris.jpg" alt="" />
+        </div>
+      </div>
+      <div class="main-screen-inner"></div>
+      <div class="signature-series1">Signature Series</div>
+      <br />
+      <img
+        class="subway-2016-logosvg-icon1"
+        alt=""
+        src="./public/subway-2016-logosvg@2x.png"
+      />
+    </div>
+
+    <script>
+      function goToPageCustomize() {
+        window.location = "./customize.html";
+      }
+
+      function goToPageSubmelts() {
+        window.location = "./main-screen-submelts.html";
+      }
+
+      function goToPageSubs() {
+        window.location = "./main-screen-subs.html";
+      }
+
+      function goToPageWraps() {
+        window.location = "./main-screen-wraps.html";
+      }
+
+      function goToPageSalades() {
+        window.location = "./main-screen-salades.html";
+      }
+
+      function goToPageDailyDeals() {
+        window.location = "./main-screen-dailydeals.html";
+      }
+
+      function goToPageBreakfast() {
+        window.location = "./main-screen-breakfast.html";
+      }
+
+      function goToPageKidsPak() {
+        window.location = "./main-screen-kidspak.html";
+      }
+
+      function goToPageDrankenExtras() {
+        window.location = "./main-screen-drankenextras.html";
+      }
+    </script>
+    <script>
+      fetch("http://slome.org:3030/api/menu", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          key: "kiosk4321",
+        },
+      }).then((data) => {
+        data.json().then((data) => console.log(data));
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuContainer = document.getElementById("menu");
+
+        // Function to fetch data from API
+        const fetchData = async () => {
+          try {
+            const response = await fetch(
+              "http://slome.org:3030/api/menu/category/980",
+              {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                  key: "kiosk4321",
+                },
+              }
+            );
+
+            if (!response.ok) {
+              throw new Error(
+                "Network response was not ok " + response.statusText
+              );
+            }
+
+            const data = await response.json();
+            displayData(data);
+          } catch (error) {
+            console.error(
+              "There has been a problem with your fetch operation:",
+              error
+            );
+          }
+        };
+
+        // Function to display data
+        const displayData = (data) => {
+          menuContainer.innerHTML = ""; // Clear any existing content
+
+          // Assuming the data is an array of menu items
+          data.forEach((item) => {
+            const itemElement = document.createElement("div");
+            itemElement.className = "menu-item";
+
+            // Create and append img
+            const imgElement = document.createElement("img");
+            imgElement.src = item.img_url;
+            imgElement.alt = item.title; // Optional: Set alt text for the image
+            itemElement.appendChild(imgElement);
+
+            // Create and append title
+            const titleElement = document.createElement("h3");
+            titleElement.textContent = item.name;
+            itemElement.appendChild(titleElement);
+
+            // Create and append description
+            // const descriptionElement = document.createElement('p');
+            // descriptionElement.textContent = item.description;
+            // itemElement.appendChild(descriptionElement);
+
+            // Create and append price
+            const priceElement = document.createElement("p");
+            priceElement.textContent = `Price: ${item.price}`;
+            itemElement.appendChild(priceElement);
+
+            menuContainer.appendChild(itemElement);
+          });
+        };
+
+        fetchData();
+      });
+    </script>
+  </body>
+</html>

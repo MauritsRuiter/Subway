@@ -1,3 +1,7 @@
+img {
+  width: 100%;
+}
+
 .sla,
 .sla-wrapper {
   position: absolute;
@@ -11,8 +15,7 @@
 .sla-wrapper {
   top: 0;
   width: 297px;
-  height: 209px;
-  background-image: url(../public/group-7@3x.png);
+  height: 225px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -27,8 +30,7 @@
 .tomaat-wrapper {
   position: absolute;
   width: 297px;
-  height: 209px;
-  background-image: url(../public/group-7@3x.png);
+  height: 225px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -58,8 +60,7 @@
   top: calc(50% - 381.5px);
   right: 0;
   width: 297px;
-  height: 209px;
-  background-image: url(../public/group-7@3x.png);
+  height: 225px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -73,8 +74,7 @@
   position: absolute;
   top: calc(50% - 104.5px);
   width: 297px;
-  height: 209px;
-  background-image: url(../public/group-7@3x.png);
+  height: 225px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -94,8 +94,7 @@
   position: absolute;
   top: calc(50% + 172.5px);
   width: 297px;
-  height: 209px;
-  background-image: url(../public/group-7@3x.png);
+  height: 225px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -114,8 +113,7 @@
 }
 .avocado-wrapper {
   width: 297px;
-  height: 209px;
-  background-image: url(../public/group-7@3x.png);
+  height: 225px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -137,8 +135,7 @@
 .peper-zout-wrapper {
   left: 392px;
   width: 297px;
-  height: 209px;
-  background-image: url(../public/group-7@3x.png);
+  height: 225px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;

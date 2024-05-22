@@ -140,11 +140,21 @@
 }
 .repeat-grid-3 {
   position: absolute;
-  bottom: 43px;
+  bottom: 0px;
   left: 50px;
   width: 980px;
-  height: 1371px;
+  height: 1525px;
   font-size: var(--font-size-6xl);
+}
+
+img {
+  width: 100%;
+}
+
+#menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1em;
 }
 .customize-item {
   position: absolute;
@@ -157,7 +167,7 @@
   position: relative;
   background-color: var(--color-white);
   width: 100%;
-  height: 1920px;
+  height: 2100px;
   text-align: left;
   font-size: var(--font-size-61xl);
   color: var(--color-gray);

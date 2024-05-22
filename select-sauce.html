@@ -5,48 +5,77 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
     <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/select-bread.css" />
+    <link rel="stylesheet" href="./css/select-sause.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Dubai:weight@400;500;700&display=swap"
     />
-    <title>select-bread</title>
+    <title>select-sause</title>
   </head>
   <body>
-    <div class="select-bread">
-      <div class="rotisserie-style-chicken1">Rotisserie Style Chicken</div>
-      <div class="kies-uw-type">Kies uw type Sub</div>
-      <div class="select-bread-child"></div>
+    <div class="select-sause">
+      <div class="kies-uw-favoriete">Kies uw favoriete saus</div>
+      <div class="kip-op-zn-container2">
+        <p class="kip-op-zn2">
+          Kip op z'n Subways. Ruim belegd met malse Rotisserie Style Chicken.
+        </p>
+        <p class="kip-op-zn2">
+          Heerlijk in combinatie met knapperige groenten op versgebakken brood.
+        </p>
+      </div>
+      <div class="rotisserie-style-chicken3">Rotisserie Style Chicken</div>
+      <div class="select-sause-child"></div>
       <img
-        class="subway-2016-logosvg-icon5"
+        class="subway-2016-logosvg-icon7"
         alt=""
         src="./public/subway-2016-logosvg@2x.png"
       />
 
-      <img class="x360-icon2" alt="" src="./public/640x360@2x.png" />
-
-      <div class="kip-op-zn-container">
-        <p class="kip-op-zn">
-          Kip op z'n Subways. Ruim belegd met malse Rotisserie Style Chicken.
-        </p>
-        <p class="kip-op-zn">
-          Heerlijk in combinatie met knapperige groenten op versgebakken brood.
-        </p>
+      <div class="light-mayo-wrapper">
+        <img
+          src="./img/09082023_1691590508118_1691590552754_8715700115351_1.jpg"
+          alt=""
+        />
+        <div class="light-mayo">Light Mayo</div>
       </div>
-      <div class="repeat-grid-4">
-        <div id="menu"></div>
+      <div class="mosterd-wrapper">
+        <img src="./img/71jtFY7qkyL.jpg" alt="" />
+        <div class="light-mayo">Mosterd</div>
       </div>
-      <div class="ad-van-misschien">AD van misschien een deal</div>
-      <div class="ad-van-misschien1">AD van misschien een deal</div>
-      <div class="deal-sub">deal = sub + side + extra ofz</div>
-      <div class="ellipse-parent">
-        <img class="group-child" alt="" src="./public/ellipse-1.svg" />
-
-        <div class="group-item"></div>
-        <div class="group-inner"></div>
+      <div class="southwest-chipotle-wrapper">
+        <img src="./img/1555602-01.jpg" alt="" />
+        <div class="light-mayo">Southwest Chipotle</div>
       </div>
-      <img class="select-bread-item" alt="" src="./public/group-13.svg" />
+      <div class="pesto-wrapper">
+        <img src="./img/8715700125534_1.jpg" alt="" />
+        <div class="light-mayo">Pesto</div>
+      </div>
+      <div class="truffelsaus-wrapper">
+        <img
+          src="./img/db8586e6-e287-11ed-992f-dec78a87307d_689bdd8a_5072_11ed_883f_9614998a84c5_heinz_creamy_mayo_with_truffle_213gr_photoroom__3_.jpg"
+          alt=""
+        />
+        <div class="light-mayo">Truffelsaus</div>
+      </div>
+      <div class="honing-mosterd-wrapper">
+        <img src="./img/s-l1600.png" alt="" />
+        <div class="light-mayo">Honing mosterd</div>
+      </div>
+      <div class="bbq-saus-wrapper">
+        <img src="./img/Packshot-BBQ-Classic.png" alt="" />
+        <div class="light-mayo">BBQ saus</div>
+      </div>
+      <div class="hot-sause-wrapper">
+        <img src="./img/1652433379868_1448x1448.png" alt="" />
+        <div class="light-mayo">Hot sause</div>
+      </div>
+      <div class="sweet-onion-wrapper">
+        <img src="./img/sauce-roasted-onion-heinz.jpg" alt="" />
+        <div class="light-mayo">Sweet onion</div>
+      </div>
+      <img class="select-sause-item" alt="" src="./public/group-13.svg" />
     </div>
+    <div id="menu"></div>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const menuContainer = document.getElementById("menu");
@@ -55,7 +84,7 @@
         const fetchData = async () => {
           try {
             const response = await fetch(
-              "http://slome.org:3030/api/ingredients/category/1",
+              "http://slome.org:3030/api/orders",
               {
                 method: "GET",
                 headers: {
@@ -88,11 +117,11 @@
           // Assuming the data is an array of menu items
           data.forEach((item) => {
             const itemElement = document.createElement("div");
-            itemElement.className = "menu-item";
+            itemElement.className = "menu-item";  
 
             // Create and append img
             const imgElement = document.createElement("img");
-            imgElement.src = `./img/${item.img_url}`; // Add ./img/ to make it work locally
+            imgElement.src = item.img_url;
             imgElement.alt = item.name; // Optional: Set alt text for the image
             itemElement.appendChild(imgElement);
 
@@ -118,6 +147,6 @@
         fetchData();
       });
     </script>
-    <script src="api.js"></script>
+    <script src="api.js" defer></script>
   </body>
 </html>
