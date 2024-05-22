@@ -13,7 +13,7 @@
     <title>start-screen</title>
   </head>
   <body>
-    <div class="start-screen">
+    <div class="start-screen" onclick="goToNextPage()">
       <img
         class="subway-choicemark-icon1"
         alt=""
@@ -45,5 +45,13 @@
         <img class="paper-bag-icon1" alt="" src="./public/paperbag@2x.png" />
       </div>
     </div>
+    <script>
+      // Scroll to the top of the page
+      window.scrollTo(0, 0);
+
+      function goToNextPage() {
+        window.location = "./main-screen-sigseries.html";
+      }
+    </script>
   </body>
 </html>

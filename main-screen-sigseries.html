@@ -136,17 +136,10 @@
       }
     </script>
     <script>
-      fetch("http://slome.org:3030/api/menu", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          key: "kiosk4321",
-        },
-      }).then((data) => {
-        data.json().then((data) => console.log(data));
-      });
-
       document.addEventListener("DOMContentLoaded", () => {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+
         const menuContainer = document.getElementById("menu");
 
         // Function to fetch data from API

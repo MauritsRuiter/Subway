@@ -26,12 +26,29 @@
       />
 
       <div class="repeat-grid-3">
-        <div id="menu"></div>
+        <div id="menu" onclick="goToNextPage()"></div>
       </div>
-      <img class="customize-item" alt="" src="./public/group-13.svg" />
+      <img
+        class="customize-item"
+        alt=""
+        src="./public/group-13.svg"
+        onclick="goToPreviousPage()"
+      />
     </div>
     <script>
+      function goToPreviousPage() {
+        window.location = "./main-screen-sigseries.html";
+      }
+
+      function goToNextPage() {
+        window.location = "./select-bread.html";
+      }
+    </script>
+    <script>
       document.addEventListener("DOMContentLoaded", () => {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+
         const menuContainer = document.getElementById("menu");
 
         // Function to fetch data from API

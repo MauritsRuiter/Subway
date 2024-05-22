@@ -34,7 +34,7 @@
         </p>
       </div>
       <div class="repeat-grid-4">
-        <div id="menu"></div>
+        <div id="menu" onclick="goToNextPage()"></div>
       </div>
       <div class="ad-van-misschien">AD van misschien een deal</div>
       <div class="ad-van-misschien1">AD van misschien een deal</div>
@@ -45,10 +45,27 @@
         <div class="group-item"></div>
         <div class="group-inner"></div>
       </div>
-      <img class="select-bread-item" alt="" src="./public/group-13.svg" />
+      <img
+        class="select-bread-item"
+        alt=""
+        src="./public/group-13.svg"
+        onclick="goToPreviousPage()"
+      />
     </div>
     <script>
+      function goToPreviousPage() {
+        window.location = "./customize.html";
+      }
+
+      function goToNextPage() {
+        window.location = "./select-toppings.html";
+      }
+    </script>
+    <script>
       document.addEventListener("DOMContentLoaded", () => {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+
         const menuContainer = document.getElementById("menu");
 
         // Function to fetch data from API
@@ -118,6 +135,5 @@
         fetchData();
       });
     </script>
-    <script src="api.js"></script>
   </body>
 </html>

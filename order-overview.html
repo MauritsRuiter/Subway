@@ -49,32 +49,55 @@
       </div>
       <img class="repeat-grid-111" alt="" src="./public/repeat-grid-11.svg" />
 
-      <div class="order-overview-inner"></div>
-      <div class="rectangle-div"></div>
-      <div class="coupongiftcard">Coupon/Giftcard</div>
-      <div class="cover-frame">
-        <div class="cover2"></div>
+      <div class="order-overview-inner" onclick="goToNextPage()"></div>
+      <div class="rectangle-div" onclick="goToNextPage()"></div>
+      <div class="coupongiftcard" onclick="goToNextPage()">Coupon/Giftcard</div>
+      <div class="cover-frame" onclick="goToNextPage()">
+        <div class="cover2" onclick="goToNextPage()"></div>
       </div>
-      <div class="order-overview-child1"></div>
-      <div class="card">Card</div>
-      <div class="cover-frame">
-        <div class="cover2"></div>
+      <div class="order-overview-child1" onclick="goToNextPage()"></div>
+      <div class="card" onclick="goToNextPage()">Card</div>
+      <div class="cover-frame" onclick="goToNextPage()">
+        <div class="cover2" onclick="goToNextPage()"></div>
       </div>
-      <div class="your-number-will">
+      <div class="your-number-will" onclick="goToNextPage()">
         Your number will show after a successful payment
       </div>
       <img
         class="bx-credit-card-front-icon"
         alt=""
         src="./public/bxcreditcardfront.svg"
+        onclick="goToNextPage()"
       />
 
-      <img class="bxs-coupon-icon" alt="" src="./public/bxscoupon.svg" />
+      <img
+        class="bxs-coupon-icon"
+        alt=""
+        src="./public/bxscoupon.svg"
+        onclick="goToNextPage()"
+      />
 
-      <img class="order-overview-child2" alt="" src="./public/group-13.svg" />
+      <img
+        class="order-overview-child2"
+        alt=""
+        src="./public/group-13.svg"
+        onclick="goToPreviousPage()"
+      />
 
       <div class="div18">€ 43,95-</div>
       <div class="subtotal">Subtotal:</div>
     </div>
+    <script>
+      // Scroll to the top of the page
+      window.scrollTo(0, 0);
+
+      function goToPreviousPage() {
+        window.location = "./overview.html";
+      }
+
+      function goToNextPage() {
+        window.location = "./thanks.html";
+      }
+    </script>
   </body>
 </html>

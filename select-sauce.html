@@ -13,7 +13,7 @@
     <title>select-sause</title>
   </head>
   <body>
-    <div class="select-sause">
+    <div class="select-sause" onclick="goToNextPage()">
       <div class="kies-uw-favoriete">Kies uw favoriete saus</div>
       <div class="kip-op-zn-container2">
         <p class="kip-op-zn2">
@@ -73,26 +73,43 @@
         <img src="./img/sauce-roasted-onion-heinz.jpg" alt="" />
         <div class="light-mayo">Sweet onion</div>
       </div>
-      <img class="select-sause-item" alt="" src="./public/group-13.svg" />
+      <img
+        class="select-sause-item"
+        alt=""
+        src="./public/group-13.svg"
+        onclick="goToPreviousPage()"
+      />
     </div>
-    <div id="menu"></div>
+    <div id="menu" onclick="goToNextPage()"></div>
+    <script>
+      // Scroll to the top of the page
+      window.scrollTo(0, 0);
+
+      function goToPreviousPage() {
+        window.location = "./select-toppings.html";
+      }
+
+      function goToNextPage() {
+        window.location = "./overview.html";
+      }
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+
         const menuContainer = document.getElementById("menu");
 
         // Function to fetch data from API
         const fetchData = async () => {
           try {
-            const response = await fetch(
-              "http://slome.org:3030/api/orders",
-              {
-                method: "GET",
-                headers: {
-                  "Content-Type": "application/json",
-                  key: "kiosk4321",
-                },
-              }
-            );
+            const response = await fetch("http://slome.org:3030/api/orders", {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                key: "kiosk4321",
+              },
+            });
 
             if (!response.ok) {
               throw new Error(
@@ -117,7 +134,7 @@
           // Assuming the data is an array of menu items
           data.forEach((item) => {
             const itemElement = document.createElement("div");
-            itemElement.className = "menu-item";  
+            itemElement.className = "menu-item";
 
             // Create and append img
             const imgElement = document.createElement("img");

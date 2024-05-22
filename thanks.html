@@ -28,15 +28,23 @@
         src="./public/subway-2016-logosvg@2x.png"
       />
 
-      <div class="thanks-item"></div>
-      <div class="cover-wrapper2">
-        <div class="cover4"></div>
+      <div class="thanks-item" onclick="goToNextPage()"></div>
+      <div class="cover-wrapper2" onclick="goToNextPage()">
+        <div class="cover4" onclick="goToNextPage()"></div>
       </div>
-      <div class="thanks-inner"></div>
-      <div class="cover-wrapper2">
-        <div class="cover4"></div>
+      <div class="thanks-inner" onclick="goToNextPage()"></div>
+      <div class="cover-wrapper2" onclick="goToNextPage()">
+        <div class="cover4" onclick="goToNextPage()"></div>
       </div>
-      <b class="b">#885</b>
+      <b class="b" onclick="goToNextPage()">#885</b>
     </div>
+    <script>
+      // Scroll to the top of the page
+      window.scrollTo(0, 0);
+
+      function goToNextPage() {
+        window.location = "./start-screen.html";
+      }
+    </script>
   </body>
 </html>

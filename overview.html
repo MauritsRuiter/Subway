@@ -83,27 +83,46 @@
 
       <img class="overview-child10" alt="" src="./public/group-15.svg" />
 
-      <div class="group-parent">
+      <div class="group-parent" onclick="goToStartScreen()">
         <img class="group-child1" alt="" src="./public/group-18.svg" />
-
         <div class="toev-aan-winkelwagen">
           <p class="toev-aan">toev. aan</p>
           <p class="toev-aan">winkelwagen</p>
         </div>
       </div>
-      <img class="overview-child11" alt="" src="./public/group-13.svg" />
 
-      <div class="group-container">
-        <div class="group-div">
-          <img class="group-child2" alt="" src="./public/group-181.svg" />
-
-          <div class="bestelling-afronden">
-            <p class="toev-aan">Bestelling</p>
-            <p class="toev-aan">Afronden</p>
-          </div>
+      <div class="group-container" onclick="goToNextPage()">
+        <img class="group-child2" alt="" src="./public/group-181.svg" />
+        <div class="bestelling-afronden">
+          <p class="toev-aan">Bestelling</p>
+          <p class="toev-aan">Afronden</p>
         </div>
         <img class="bx-check-icon" alt="" src="./public/bxcheck.svg" />
       </div>
     </div>
+
+    <img
+      class="overview-child11"
+      alt=""
+      src="./public/group-13.svg"
+      onclick="goToPreviousPage()"
+    />
+
+    <script>
+      // Scroll to the top of the page
+      window.scrollTo(0, 0);
+
+      function goToPreviousPage() {
+        window.location = "./select-toppings.html";
+      }
+
+      function goToStartScreen() {
+        window.location = "./main-screen-sigseries.html";
+      }
+
+      function goToNextPage() {
+        window.location = "./order-overview.html";
+      }
+    </script>
   </body>
 </html>

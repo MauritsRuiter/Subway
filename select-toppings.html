@@ -14,65 +14,65 @@
   </head>
   <body>
     <div class="select-toppings">
-      <div class="repeat-grid-5">
+      <div class="repeat-grid-5" onclick="goToNextPage()">
         <div class="div">
           <div class="sla-wrapper">
-            <img src="./img/935-1_Ijsbergsla gesneden per zak.jpg" alt="">
+            <img src="./img/sla.jpg" alt="" />
             <div class="sla">Sla</div>
           </div>
           <div class="tomaat-wrapper">
-            <img src="./img/896-1_tomaten schijf 12 cm.jpg" alt="">
+            <img src="./img/tomaat.jpg" alt="" />
             <div class="sla">Tomaat</div>
           </div>
           <div class="komkommer-wrapper">
-            <img src="./img/908-1_Komkommer schijfjes.jpg" alt="">
+            <img src="./img/komkommer.jpg" alt="" />
             <div class="sla">Komkommer</div>
           </div>
           <div class="augurken-wrapper">
-            <img src="./img/two-sliced-green-pickles-isolated-600nw-1666870864.jpg" alt="">
+            <img src="./img/augurk.jpg" alt="" />
             <div class="sla">Augurken</div>
           </div>
           <div class="rode-ui-wrapper">
-            <img src="./img/354-1_Rode uienringen zak 500 gram.jpg" alt="">
+            <img src="./img/rodeui.jpg" alt="" />
             <div class="sla">Rode ui</div>
           </div>
           <div class="paprika-wrapper">
-            <img src="./img/5774-1_Parika rood stift.jpg" alt="">
+            <img src="./img/paprika.jpg" alt="" />
             <div class="paprika">Paprika</div>
           </div>
           <div class="olijfen-wrapper">
-            <img src="./img/groene_olijven_de_haas.png" alt="">
+            <img src="./img/olijf.png" alt="" />
             <div class="sla">Olijfen</div>
           </div>
           <div class="groene-peper-wrapper">
-            <img src="./img/207-1_Pepers groen.jpg" alt="">
+            <img src="./img/groenepeper.jpg" alt="" />
             <div class="sla">Groene peper</div>
           </div>
           <div class="banana-peper-wrapper">
-            <img src="./img/istockphoto-496602150-612x612.jpg" alt="">
+            <img src="./img/banaanpeper.jpg" alt="" />
             <div class="sla">Banana peper</div>
           </div>
           <div class="bacon-wrapper">
-            <img src="./img/640px-Made20bacon.png" alt="">
+            <img src="./img/bacon.png" alt="" />
             <div class="sla">Bacon</div>
           </div>
           <div class="jalapeno-peper-wrapper">
-            <img src="./img/5406-1_Jalapenos groen.jpg" alt="">
+            <img src="./img/jalapenos.jpg" alt="" />
             <div class="sla">Jalapeno peper</div>
           </div>
           <div class="spinazie-wrapper">
-            <img src="./img/226-1_Spinazie gewassen 300 gram.jpg" alt="">
+            <img src="./img/spinazie.jpg" alt="" />
             <div class="sla">Spinazie</div>
           </div>
           <div class="avocado-wrapper">
-            <img src="./img/557-2_Avocado ready to eat.jpg" alt="">
+            <img src="./img/avocado.jpg" alt="" />
             <div class="sla">Avocado</div>
           </div>
         </div>
       </div>
       <div class="peper-zout-wrapper">
-            <img src="./img/l-intro-1651076874.jpg" alt="">
-            <div class="sla">Extra Peper & Zout</div>
+        <img src="./img/peperzout.jpg" alt="" />
+        <div class="sla">Extra Peper & Zout</div>
       </div>
       <div class="select-toppings-child"></div>
       <div class="kies-uw-toppings">Kies uw toppings</div>
@@ -92,79 +92,96 @@
         src="./public/subway-2016-logosvg@2x.png"
       />
 
-      <img class="select-toppings-inner" alt="" src="./public/group-13.svg" />
+      <img
+        class="select-toppings-inner"
+        alt=""
+        src="./public/group-13.svg"
+        onclick="goToPreviousPage()"
+      />
     </div>
     <div id="menu"></div>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const menuContainer = document.getElementById("menu");
+      function goToPreviousPage() {
+        window.location = "./select-bread.html";
+      }
 
-        // Function to fetch data from API
-        const fetchData = async () => {
-          try {
-            const response = await fetch(
-              "http://slome.org:3030/api/ingredients/category/2",
-              {
-                method: "GET",
-                headers: {
-                  "Content-Type": "application/json",
-                  key: "kiosk4321",
-                },
-              }
-            );
+      function goToNextPage() {
+        window.location = "./select-sauce.html";
+      }
+    </script>
+    <script>
+      // Scroll to the top of the page
+      window.scrollTo(0, 0);
 
-            if (!response.ok) {
-              throw new Error(
-                "Network response was not ok " + response.statusText
-              );
-            }
+      // document.addEventListener("DOMContentLoaded", () => {
+      //   const menuContainer = document.getElementById("menu");
 
-            const data = await response.json();
-            displayData(data);
-          } catch (error) {
-            console.error(
-              "There has been a problem with your fetch operation:",
-              error
-            );
-          }
-        };
+      //   // Function to fetch data from API
+      //   const fetchData = async () => {
+      //     try {
+      //       const response = await fetch(
+      //         "http://slome.org:3030/api/ingredients/category/2",
+      //         {
+      //           method: "GET",
+      //           headers: {
+      //             "Content-Type": "application/json",
+      //             key: "kiosk4321",
+      //           },
+      //         }
+      //       );
 
-        // Function to display data
-        const displayData = (data) => {
-          menuContainer.innerHTML = ""; // Clear any existing content
+      //       if (!response.ok) {
+      //         throw new Error(
+      //           "Network response was not ok " + response.statusText
+      //         );
+      //       }
 
-          // Assuming the data is an array of menu items
-          data.forEach((item) => {
-            const itemElement = document.createElement("div");
-            itemElement.className = "menu-item";
+      //       const data = await response.json();
+      //       displayData(data);
+      //     } catch (error) {
+      //       console.error(
+      //         "There has been a problem with your fetch operation:",
+      //         error
+      //       );
+      //     }
+      //   };
 
-            // Create and append img
-            const imgElement = document.createElement("img");
-            imgElement.src = item.img_url;
-            imgElement.alt = item.name; // Optional: Set alt text for the image
-            itemElement.appendChild(imgElement);
+      //   // Function to display data
+      //   const displayData = (data) => {
+      //     menuContainer.innerHTML = ""; // Clear any existing content
 
-            // Create and append title
-            const titleElement = document.createElement("h3");
-            titleElement.textContent = item.name;
-            itemElement.appendChild(titleElement);
+      //     // Assuming the data is an array of menu items
+      //     data.forEach((item) => {
+      //       const itemElement = document.createElement("div");
+      //       itemElement.className = "menu-item";
 
-            // Create and append description
-            // const descriptionElement = document.createElement('p');
-            // descriptionElement.textContent = item.description;
-            // itemElement.appendChild(descriptionElement);
+      //       // Create and append img
+      //       const imgElement = document.createElement("img");
+      //       imgElement.src = item.img_url;
+      //       imgElement.alt = item.name; // Optional: Set alt text for the image
+      //       itemElement.appendChild(imgElement);
 
-            // Create and append price
-            const priceElement = document.createElement("p");
-            priceElement.textContent = `Price: ${item.price}`;
-            itemElement.appendChild(priceElement);
+      //       // Create and append title
+      //       const titleElement = document.createElement("h3");
+      //       titleElement.textContent = item.name;
+      //       itemElement.appendChild(titleElement);
 
-            menuContainer.appendChild(itemElement);
-          });
-        };
+      //       // Create and append description
+      //       // const descriptionElement = document.createElement('p');
+      //       // descriptionElement.textContent = item.description;
+      //       // itemElement.appendChild(descriptionElement);
 
-        fetchData();
-      });
+      //       // Create and append price
+      //       const priceElement = document.createElement("p");
+      //       priceElement.textContent = `Price: ${item.price}`;
+      //       itemElement.appendChild(priceElement);
+
+      //       menuContainer.appendChild(itemElement);
+      //     });
+      //   };
+
+      //   fetchData();
+      // });
     </script>
   </body>
 </html>
