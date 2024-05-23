@@ -1,5 +1,5 @@
 // GET example
-fetch("http://slome.org:3030/api/ingredients/category/1",
+fetch("http://slome.org:3030/api/ingredients",
 {
     method: "GET",
     headers: {

@@ -40,11 +40,12 @@
   position: absolute;
   bottom: 76px;
   left: 115px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.16) inset;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.16) inset; */
   border-radius: var(--br-9xl);
   background-color: var(--color-white);
   width: 700px;
   height: 1110px;
+  border: dashed black;
 }
 .sauzen,
 .sub,

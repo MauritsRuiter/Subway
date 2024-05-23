@@ -25,7 +25,8 @@
   position: absolute;
   top: 450px;
   left: 189px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.16) inset;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.16) inset; */
+  border: dashed black;
   border-radius: var(--br-9xl);
   background-color: var(--color-white);
   width: 700px;
